@@ -2,11 +2,25 @@ defmodule AdventOfCode2023.AdventDay do
   @moduledoc false
   defmacro __using__(_opts) do
     quote do
+      @day :erlang.atom_to_binary(__MODULE__, :utf8) |> String.split("Day") |> List.last() |> String.to_integer()
+      require Logger
+
       def run() do
-        IO.puts("Day #{__MODULE__}")
-        IO.puts("Part 1: #{part1()}")
-        IO.puts("Part 2: #{part2()}")
+        Logger.info("####################################")
+        stream = File.stream!("priv/day_#{@day}.txt")
+        data = stream |> Stream.map(&String.trim/1) |> Enum.take(3) |> Enum.join(", ")
+        common = "[Day #{@day}] "
+        debug("Data: #{data}...")
+        info("Sending stream to part1")
+        warn("Part 1: #{part1 stream}")
+        info("Sending stream to part2")
+        warn("Part 2: #{part2 stream}")
+        Logger.info("####################################")
       end
+
+      def debug(string), do: Logger.debug("[Day #{@day}] #{string}")
+      def info(string), do: Logger.info("[Day #{@day}] #{string}")
+      def warn(string), do: Logger.warn("[Day #{@day}] #{string}")
     end
   end
 end

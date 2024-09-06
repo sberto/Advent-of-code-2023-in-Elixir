@@ -5,11 +5,7 @@ defmodule AdventOfCode2023 do
   def start(_type, _args) do
     IO.puts("Starting Advent of Code 2023")
     setup()
-    try do
-      run()
-    rescue
-      _ -> IO.puts("Error")
-    end
+    Mix.env() != :test and run()
     {:ok, self()}
   end
 
@@ -29,13 +25,12 @@ defmodule AdventOfCode2023 do
             File.write!("priv/day_#{day}.txt", output)
         end
       end
-      IO.puts("All inputs downloaded")
     end
+    IO.puts("All inputs downloaded")
   end
 
   def run() do
     for day <- 1..25 do
-      IO.puts("Day #{day}")
       module = Module.concat(AdventOfCode2023, "Day#{day}")
       apply(module, :run, [])
     end

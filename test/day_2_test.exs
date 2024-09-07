@@ -17,9 +17,15 @@ defmodule AdventOfCode2023Test.Day2 do
   ]
   @day_1_output 8
 
-  @day_2_input []
-  @day_2_output []
-  @day_2_output_total 0
+  @day_2_input @day_1_input
+  @day_2_output [
+    %{:red => 4, :green => 2, :blue  => 6},
+    %{:red => 1, :green => 3, :blue  => 4},
+    %{:red => 20, :green => 13, :blue  => 6},
+    %{:red => 14, :green => 3, :blue  => 15},
+    %{:red => 6, :green => 3, :blue  => 2}
+  ]
+  @day_2_output_total 2286
 
   use LineByLineTestTemplate
 end

@@ -12,15 +12,15 @@ defmodule AdventOfCode2023.AdventDay do
         common = "[Day #{@day}] "
         debug("Data: #{data}...")
         info("Sending stream to part1")
-        warn("Part 1: #{part1 stream}")
+        warning("Part 1: #{part1 stream}")
         info("Sending stream to part2")
-        warn("Part 2: #{part2 stream}")
+        warning("Part 2: #{part2 stream}")
         Logger.info("####################################")
       end
 
       def debug(string), do: Logger.debug("[Day #{@day}] #{string}")
       def info(string), do: Logger.info("[Day #{@day}] #{string}")
-      def warn(string), do: Logger.warn("[Day #{@day}] #{string}")
+      def warning(string), do: Logger.warning("[Day #{@day}] #{string}")
     end
   end
 end

@@ -51,13 +51,19 @@ defmodule AdventOfCode2023.Day2 do
   def part2(list) when is_list(list) do
     list
     |> Enum.map(&part2_line/1)
-    throw "Not implemented"
+    |> Enum.map(&multiply_games/1)
+    |> Enum.sum()
   end
   def part2(stream) do
-    stream |> Enum.to_list() |> part2()
+    stream |> Enum.to_list() |> Enum.map(&String.trim/1) |> part2()
   end
 
   def part2_line(line) do
-    throw "Not implemented"
+    {_, games} = part1_line(line)
+    games |> Enum.reduce(&Map.merge(&1, &2, fn k, v1, v2 -> max(v1, v2) end))
+  end
+
+  def multiply_games(games) do
+      Map.get(games, :red, 0) * Map.get(games, :green, 0) * Map.get(games, :blue, 0)
   end
 end

@@ -3,7 +3,15 @@ defmodule AdventOfCode2023Test.Day1 do
   @day_1_line_output [12, 38, 15, 77]
   @day_1_output 142
 
-  @day_2_input ["two1nine", "eightwothree", "abcone2threexyz", "xtwone3four", "4nineeightseven2", "zoneight234", "7pqrstsixteen"]
+  @day_2_input [
+    "two1nine",
+    "eightwothree",
+    "abcone2threexyz",
+    "xtwone3four",
+    "4nineeightseven2",
+    "zoneight234",
+    "7pqrstsixteen"
+  ]
   @day_2_output [29, 83, 13, 24, 42, 14, 76]
   @day_2_output_total 281
 

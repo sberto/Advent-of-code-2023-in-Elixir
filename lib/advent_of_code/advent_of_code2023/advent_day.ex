@@ -2,7 +2,10 @@ defmodule AdventOfCode2023.AdventDay do
   @moduledoc false
   defmacro __using__(_opts) do
     quote do
-      @day :erlang.atom_to_binary(__MODULE__, :utf8) |> String.split("Day") |> List.last() |> String.to_integer()
+      @day :erlang.atom_to_binary(__MODULE__, :utf8)
+           |> String.split("Day")
+           |> List.last()
+           |> String.to_integer()
       require Logger
 
       def run() do
@@ -12,9 +15,9 @@ defmodule AdventOfCode2023.AdventDay do
         common = "[Day #{@day}] "
         debug("Data: #{data}...")
         info("Sending stream to part1")
-        warning("Part 1: #{part1 stream}")
+        warning("Part 1: #{part1(stream)}")
         info("Sending stream to part2")
-        warning("Part 2: #{part2 stream}")
+        warning("Part 2: #{part2(stream)}")
         Logger.info("####################################")
       end
 

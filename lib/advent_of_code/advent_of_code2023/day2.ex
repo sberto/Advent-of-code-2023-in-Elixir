@@ -6,17 +6,22 @@ defmodule AdventOfCode2023.Day2 do
     list
     |> Enum.map(&part1_line/1)
     |> Enum.map(fn {game_number, games} ->
-      if check_games(games) do game_number else 0 end
+      if check_games(games) do
+        game_number
+      else
+        0
+      end
     end)
     |> Enum.sum()
   end
+
   def part1(stream) do
     stream |> Enum.to_list() |> Enum.map(&String.trim/1) |> part1()
   end
 
   def part1_line(line) do
     [game_number | games] = line |> String.split([":", ";"], trim: true)
-    game_number = game_number |> String.split(" ") |> Enum.take(-1) |> hd |> String.to_integer
+    game_number = game_number |> String.split(" ") |> Enum.take(-1) |> hd |> String.to_integer()
     games = games |> Enum.map(&parse_game/1)
     {game_number, games}
   end
@@ -26,11 +31,11 @@ defmodule AdventOfCode2023.Day2 do
     |> String.split([",", " "], trim: true)
     |> Enum.chunk_every(2)
     |> Enum.reduce(
-         %{},
-         fn [count, color], acc ->
-           Map.put(acc, String.to_atom(color), count |> String.to_integer)
-         end
-       )
+      %{},
+      fn [count, color], acc ->
+        Map.put(acc, String.to_atom(color), count |> String.to_integer())
+      end
+    )
   end
 
   def check_games(games) do
@@ -54,6 +59,7 @@ defmodule AdventOfCode2023.Day2 do
     |> Enum.map(&multiply_games/1)
     |> Enum.sum()
   end
+
   def part2(stream) do
     stream |> Enum.to_list() |> Enum.map(&String.trim/1) |> part2()
   end
@@ -64,6 +70,6 @@ defmodule AdventOfCode2023.Day2 do
   end
 
   def multiply_games(games) do
-      Map.get(games, :red, 0) * Map.get(games, :green, 0) * Map.get(games, :blue, 0)
+    Map.get(games, :red, 0) * Map.get(games, :green, 0) * Map.get(games, :blue, 0)
   end
 end

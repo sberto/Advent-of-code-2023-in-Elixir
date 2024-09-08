@@ -3,10 +3,14 @@ defmodule LineByLineTestTemplate do
 
   using do
     quote do
-      @day :erlang.atom_to_binary(__MODULE__, :utf8) |> String.split("Day") |> List.last() |> String.to_integer()
+      @day :erlang.atom_to_binary(__MODULE__, :utf8)
+           |> String.split("Day")
+           |> List.last()
+           |> String.to_integer()
       @module Module.concat(AdventOfCode2023, "Day#{@day}")
 
       use ExUnit.Case
+
       test "day #{@day} - part 1 - single lines" do
         for {line, expected_line} <- List.zip([@day_1_input, @day_1_line_output]) do
           assert apply(@module, :part1_line, [line]) == expected_line

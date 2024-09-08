@@ -7,6 +7,7 @@ defmodule AdventOfCode2023.Day1 do
     |> Enum.map(&part1_line/1)
     |> Enum.sum()
   end
+
   def part1(stream) do
     stream |> Enum.to_list() |> part1()
   end
@@ -17,6 +18,7 @@ defmodule AdventOfCode2023.Day1 do
       |> String.split("", trim: true)
       |> Enum.filter(&String.match?(&1, ~r/\d/))
       |> Enum.map(&String.to_integer/1)
+
     hd(digits) * 10 + Enum.at(digits, -1)
   end
 
@@ -26,6 +28,7 @@ defmodule AdventOfCode2023.Day1 do
     |> Enum.map(&part2_line/1)
     |> Enum.sum()
   end
+
   def part2(stream) do
     stream |> Enum.to_list() |> part2()
   end
@@ -38,11 +41,13 @@ defmodule AdventOfCode2023.Day1 do
       Regex.run(@regex, line)
       |> hd
       |> convert_word_to_digit()
+
     last_digit =
       Regex.run(@reverse_regex, String.reverse(line))
       |> hd
       |> String.reverse()
       |> convert_word_to_digit()
+
     first_digit * 10 + last_digit
   end
 

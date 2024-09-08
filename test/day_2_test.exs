@@ -10,20 +10,35 @@ defmodule AdventOfCode2023Test.Day2 do
   ]
   @day_1_line_output [
     {1, [%{:blue => 3, :red => 4}, %{:red => 1, :green => 2, :blue => 6}, %{:green => 2}]},
-    {2, [%{:blue => 1, :green => 2}, %{:green => 3, :blue => 4, :red => 1}, %{:green => 1, :blue => 1}]},
-    {3, [%{:green => 8, :blue => 6, :red => 20}, %{:blue => 5, :red => 4, :green => 13}, %{:green => 5, :red => 1}]},
-    {4, [%{:green => 1, :red => 3, :blue => 6}, %{:green => 3, :red => 6}, %{:green => 3, :blue => 15, :red => 14}]},
+    {2,
+     [
+       %{:blue => 1, :green => 2},
+       %{:green => 3, :blue => 4, :red => 1},
+       %{:green => 1, :blue => 1}
+     ]},
+    {3,
+     [
+       %{:green => 8, :blue => 6, :red => 20},
+       %{:blue => 5, :red => 4, :green => 13},
+       %{:green => 5, :red => 1}
+     ]},
+    {4,
+     [
+       %{:green => 1, :red => 3, :blue => 6},
+       %{:green => 3, :red => 6},
+       %{:green => 3, :blue => 15, :red => 14}
+     ]},
     {5, [%{:red => 6, :blue => 1, :green => 3}, %{:blue => 2, :red => 1, :green => 2}]}
   ]
   @day_1_output 8
 
   @day_2_input @day_1_input
   @day_2_output [
-    %{:red => 4, :green => 2, :blue  => 6},
-    %{:red => 1, :green => 3, :blue  => 4},
-    %{:red => 20, :green => 13, :blue  => 6},
-    %{:red => 14, :green => 3, :blue  => 15},
-    %{:red => 6, :green => 3, :blue  => 2}
+    %{:red => 4, :green => 2, :blue => 6},
+    %{:red => 1, :green => 3, :blue => 4},
+    %{:red => 20, :green => 13, :blue => 6},
+    %{:red => 14, :green => 3, :blue => 15},
+    %{:red => 6, :green => 3, :blue => 2}
   ]
   @day_2_output_total 2286
 

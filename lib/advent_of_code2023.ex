@@ -13,19 +13,29 @@ defmodule AdventOfCode2023 do
     unless File.exists?("priv") do
       File.mkdir!("priv")
     end
+
     for day <- 1..25 do
       unless File.exists?("priv/day_#{day}.txt") do
         session = System.get_env("AOC_SESSION")
+
         case session do
           nil ->
-            IO.puts "AOC_SESSION environment variable is not set"
-            throw "AOC_SESSION environment variable is not set"
+            IO.puts("AOC_SESSION environment variable is not set")
+            throw("AOC_SESSION environment variable is not set")
+
           _ ->
-            {output, 0} =  System.cmd("curl", ["https://adventofcode.com/2023/day/#{day}/input", "-H", "Cookie: session=#{session}"])
+            {output, 0} =
+              System.cmd("curl", [
+                "https://adventofcode.com/2023/day/#{day}/input",
+                "-H",
+                "Cookie: session=#{session}"
+              ])
+
             File.write!("priv/day_#{day}.txt", output)
         end
       end
     end
+
     IO.puts("All inputs downloaded")
   end
 

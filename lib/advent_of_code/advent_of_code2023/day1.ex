@@ -1,15 +1,11 @@
 defmodule AdventOfCode2023.Day1 do
-  use AdventOfCode2023.AdventDay
+  use AdventOfCode2023.AdventDay.LineByLine
 
   ##################
   def part1(list) when is_list(list) do
     list
     |> Enum.map(&part1_line/1)
     |> Enum.sum()
-  end
-
-  def part1(stream) do
-    stream |> Enum.to_list() |> part1()
   end
 
   def part1_line(line) do
@@ -27,10 +23,6 @@ defmodule AdventOfCode2023.Day1 do
     list
     |> Enum.map(&part2_line/1)
     |> Enum.sum()
-  end
-
-  def part2(stream) do
-    stream |> Enum.to_list() |> part2()
   end
 
   @regex ~r/\d|one|two|three|four|five|six|seven|eight|nine/

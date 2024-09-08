@@ -1,5 +1,5 @@
 defmodule AdventOfCode2023.Day2 do
-  use AdventOfCode2023.AdventDay
+  use AdventOfCode2023.AdventDay.LineByLine
 
   ##################
   def part1(list) when is_list(list) do
@@ -13,10 +13,6 @@ defmodule AdventOfCode2023.Day2 do
       end
     end)
     |> Enum.sum()
-  end
-
-  def part1(stream) do
-    stream |> Enum.to_list() |> Enum.map(&String.trim/1) |> part1()
   end
 
   def part1_line(line) do
@@ -60,13 +56,9 @@ defmodule AdventOfCode2023.Day2 do
     |> Enum.sum()
   end
 
-  def part2(stream) do
-    stream |> Enum.to_list() |> Enum.map(&String.trim/1) |> part2()
-  end
-
   def part2_line(line) do
     {_, games} = part1_line(line)
-    games |> Enum.reduce(&Map.merge(&1, &2, fn k, v1, v2 -> max(v1, v2) end))
+    games |> Enum.reduce(&Map.merge(&1, &2, fn _, v1, v2 -> max(v1, v2) end))
   end
 
   def multiply_games(games) do

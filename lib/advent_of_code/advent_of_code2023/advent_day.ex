@@ -6,18 +6,18 @@ defmodule AdventOfCode2023.AdventDay do
            |> String.split("Day")
            |> List.last()
            |> String.to_integer()
+
       require Logger
 
       def run() do
         Logger.info("####################################")
         stream = File.stream!("priv/day_#{@day}.txt")
-        data = stream |> Stream.map(&String.trim/1) |> Enum.take(3) |> Enum.join(", ")
+
         common = "[Day #{@day}] "
-        debug("Data: #{data}...")
         info("Sending stream to part1")
-        warning("Part 1: #{part1(stream)}")
+        warning("Part 1: #{_part1(stream)}")
         info("Sending stream to part2")
-        warning("Part 2: #{part2(stream)}")
+        warning("Part 2: #{_part2(stream)}")
         Logger.info("####################################")
       end
 

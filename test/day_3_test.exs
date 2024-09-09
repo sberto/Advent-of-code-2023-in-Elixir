@@ -15,7 +15,19 @@ defmodule AdventOfCode2023Test.Day3 do
   """
   @day_1_output 4361
 
-  @day 3
+  @day_2_input """
+  467..114..
+  ...*......
+  ..35..633.
+  ......#...
+  617*......
+  .....+.58.
+  ..592.....
+  ......755.
+  ...$.*....
+  .664.598..
+  """
+  @day_2_output 467_835
 
   use StreamTestTemplate
 end

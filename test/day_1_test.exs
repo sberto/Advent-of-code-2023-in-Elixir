@@ -12,8 +12,8 @@ defmodule AdventOfCode2023Test.Day1 do
     "zoneight234",
     "7pqrstsixteen"
   ]
-  @day_2_output [29, 83, 13, 24, 42, 14, 76]
-  @day_2_output_total 281
+  @day_2_line_output [29, 83, 13, 24, 42, 14, 76]
+  @day_2_output 281
 
   use LineByLineTestTemplate
 

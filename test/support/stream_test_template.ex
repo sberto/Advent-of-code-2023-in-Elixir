@@ -17,7 +17,7 @@ defmodule StreamTestTemplate do
 
       ##################
       test "day #{@day} - part 2 - total" do
-        assert apply(@module, :_part2, [stream(@day_2_input)]) == @day_2_output_total
+        assert apply(@module, :_part2, [stream(@day_2_input)]) == @day_2_output
       end
 
       def stream(string) do

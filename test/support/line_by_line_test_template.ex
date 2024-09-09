@@ -24,13 +24,13 @@ defmodule LineByLineTestTemplate do
       ##################
 
       test "day #{@day} - part 2 - single lines" do
-        for {line, expected_line} <- List.zip([@day_2_input, @day_2_output]) do
+        for {line, expected_line} <- List.zip([@day_2_input, @day_2_line_output]) do
           assert apply(@module, :part2_line, [line]) == expected_line
         end
       end
 
       test "day #{@day} - part 2 - total" do
-        assert apply(@module, :part2, [@day_2_input]) == @day_2_output_total
+        assert apply(@module, :part2, [@day_2_input]) == @day_2_output
       end
     end
   end

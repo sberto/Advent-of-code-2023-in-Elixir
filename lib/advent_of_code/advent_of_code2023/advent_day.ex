@@ -15,9 +15,11 @@ defmodule AdventOfCode2023.AdventDay do
 
         common = "[Day #{@day}] "
         info("Sending stream to part1")
-        warning("Part 1: #{_part1(stream)}")
+        {time, result} = :timer.tc(fn -> _part1(stream) end)
+        warning("Part 1: #{result} in #{time / 1_000} ms")
         info("Sending stream to part2")
-        warning("Part 2: #{_part2(stream)}")
+        {time, result} = :timer.tc(fn -> _part2(stream) end)
+        warning("Part 2: #{result} in #{time / 1_000} ms")
         Logger.info("####################################")
       end
 

@@ -11,5 +11,8 @@ defmodule AdventOfCode2023Test.Day4 do
   """
   @day_1_output 13
 
+  @day_2_input @day_1_input
+  @day_2_output 30
+
   use StreamTestTemplate
 end
